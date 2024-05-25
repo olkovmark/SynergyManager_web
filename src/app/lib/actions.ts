@@ -24,7 +24,7 @@ export async function authenticate(_currentState: unknown, formData: FormData) {
 
       cookies().set("session", token, {
         httpOnly: true,
-        secure: process.env.NODE_ENV === "production",
+        secure: false,
         maxAge: 60 * 60 * 24 * 1,
         path: "/",
       });
