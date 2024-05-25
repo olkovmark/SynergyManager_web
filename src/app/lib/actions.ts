@@ -2,9 +2,10 @@
 
 import { cookies } from "next/headers";
 
+const url = process.env.NEXT_PUBLIC_API_URL;
 export async function authenticate(_currentState: unknown, formData: FormData) {
   try {
-    const response = await fetch("http://localhost:3001/auth", {
+    const response = await fetch(url + "auth", {
       headers: {
         "Content-Type": "application/json",
       },
@@ -53,7 +54,7 @@ export async function logout() {
 }
 
 export async function fetchServices() {
-  const response = await fetch("http://localhost:3001/api/service", {
+  const response = await fetch(url + "api/service", {
     headers: {
       Authorization: `${cookies().get("session")}`,
     },
@@ -65,9 +66,7 @@ export async function fetchServices() {
 export async function getUserActions(service_id: number, user_id: number, date?: Date) {
   let dateSeconds = date ? Math.floor(date.getTime() / 1000) : undefined;
   const response = await fetch(
-    `http://localhost:3001/api/service/${service_id}/user/${user_id}/actions${
-      dateSeconds ? "?date=" + dateSeconds : ""
-    }`,
+    url + `api/service/${service_id}/user/${user_id}/actions${dateSeconds ? "?date=" + dateSeconds : ""}`,
     {
       headers: {
         Authorization: `${cookies().get("session")}`,

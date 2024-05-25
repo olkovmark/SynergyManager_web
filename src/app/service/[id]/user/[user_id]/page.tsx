@@ -14,12 +14,13 @@ type UsersServiceStatInfo = {
   last_name: string;
   statistic: { bots?: any[]; chats?: any[] };
 };
+const url = process.env.NEXT_PUBLIC_API_URL;
 
 const page = async ({ params: { id, user_id } }: { params: { id: number; user_id: number } }) => {
   let userServiceInfo: UsersServiceStatInfo | null = null;
   let actions: any[] = [];
   try {
-    const res = await fetch(`http://localhost:3001/api/service/${id}/user/${user_id}`, {
+    const res = await fetch(url + `api/service/${id}/user/${user_id}`, {
       next: { revalidate: 60 * 5 },
     });
 

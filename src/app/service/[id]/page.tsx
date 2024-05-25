@@ -25,11 +25,12 @@ type ServiceStatType = {
     message_types: { type: string; count: number }[];
   };
 };
+const url = process.env.NEXT_PUBLIC_API_URL;
 
 const page = async ({ params }: { params: { id: number } }) => {
   let serviceInfo: ServiceStatType | undefined;
   try {
-    const res = await fetch(`http://localhost:3001/api/service/${params.id}`, {
+    const res = await fetch(url + `api/service/${params.id}`, {
       next: { revalidate: 0 },
     });
 

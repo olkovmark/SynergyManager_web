@@ -5,8 +5,9 @@ import { ServiceData, UsersFullInfo, UserType } from "@/common/Types";
 import InfoBlock from "@/components/InfoBlock/InfoBlock";
 import UsersFullList from "@/components/UsersFullList/UsersFullList";
 
+const url = process.env.NEXT_PUBLIC_API_URL;
 const page = async () => {
-  const res = await fetch(`http://localhost:3001/api/service`, {
+  const res = await fetch(url + `api/service`, {
     next: { revalidate: 5 },
   });
 
