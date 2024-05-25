@@ -1,0 +1,17 @@
+.service_col {
+  cursor: pointer;
+  text-align: center;
+}
+
+.service_col:hover {
+  background-color: #f5f5f5;
+}
+
+.service_cell {
+  padding: 0.5rem;
+  cursor: pointer;
+  text-align: center;
+}
+.service_cell:hover {
+  background-color: #f5f5f5;
+}

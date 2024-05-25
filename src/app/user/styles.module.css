@@ -1,0 +1,29 @@
+.userSection {
+  display: grid;
+  gap: 10px;
+}
+
+.serviceList {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+}
+
+.serviceItem {
+  padding: 10px;
+  border: 1px solid gray;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  background-color: gray;
+  color: white;
+  text-align: center;
+}
+
+.serviceItem:hover {
+  background-color: #3c3c3c;
+  cursor: pointer;
+}
+
+.serviceItem > a {
+  color: white;
+}

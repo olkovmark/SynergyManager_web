@@ -1,0 +1,15 @@
+.nav {
+  display: flex;
+  width: 100%;
+  padding: 20px 20px;
+  box-shadow: 0px 10px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+  font-size: large;
+}
+
+.nav > * {
+  padding: 0 20px;
+}
+.nav > *:not(:last-child) {
+  border-right: 1px solid black;
+}

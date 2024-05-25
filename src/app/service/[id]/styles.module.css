@@ -1,0 +1,40 @@
+.container {
+  display: grid;
+  gap: 10px;
+}
+.infoBlocks {
+  display: grid;
+  gap: 10px;
+}
+.chartsBlock {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+  grid-template-rows: auto;
+}
+
+.general_info {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 10px;
+
+  padding: 20px;
+}
+
+.tablesBlock {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+  gap: 10px;
+}
+
+.tablesBlock > div {
+  padding: 20px;
+  box-sizing: border-box;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 10px 0;
+}
+
+.tableItem > div {
+  height: 500px;
+
+  overflow: auto;
+}
