@@ -23,8 +23,6 @@ export async function authenticate(_currentState: unknown, formData: FormData) {
       //save token to local storage
 
       cookies().set("session", token, {
-        httpOnly: true,
-        secure: false,
         maxAge: 60 * 60 * 24 * 1,
         path: "/",
       });
